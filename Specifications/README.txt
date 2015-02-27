@@ -1,1 +1,1 @@
-Insérer les différents diagrammes et spécifications ici. 
+Insérer les différents diagrammes et spécifications 
