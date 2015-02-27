@@ -10,6 +10,7 @@ import java.util.ArrayList;
  */
 public class Equipe {
 	
+	private int idE;
 	private String nomE;
 	private int budget;
 	private ArrayList <Coureur> listC;

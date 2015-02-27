@@ -8,17 +8,24 @@
  */
 public class Course {
 	
+	private int idCourse;
 	private String nomCourse;
 	private int va;
 	private int sp;
 	private int mt;
 	
-	public Course(String nomCourse, int va, int sp, int mt)
+	public Course(int idCourse, String nomCourse, int va, int sp, int mt)
 	{
+		this.idCourse = idCourse;
 		this.nomCourse = nomCourse;
 		this.va = va;
 		this.sp = sp;
 		this.mt = mt;
+	}
+	
+	public int getIdCourse()
+	{
+		return this.idCourse;
 	}
 	
 	public String getNomCourse(){

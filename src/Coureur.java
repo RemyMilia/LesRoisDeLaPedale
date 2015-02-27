@@ -11,17 +11,25 @@ public class Coureur {
 	/**
 	 * @param args
 	 */
+	private int idCoureur;
 	private String nomCoureur;
 	private int va;
 	private int sp;
 	private int mt;
+	private Equipe eq;
 	
-	public Coureur(String nom, int va, int sp, int mt)
+	public Coureur(int idCoureur, int va, int sp, int mt, Equipe eq)
 	{
-		this.nomCoureur = nom;
+		this.idCoureur = idCoureur;
+		this.nomCoureur = "C"+idCoureur;
 		this.va = va;
 		this.sp = sp;
 		this.mt = mt;
+		this.eq = eq;
+	}
+	
+	public int getIdCoureur(){
+		return this.idCoureur;
 	}
 	
 	public String getNomCoureur(){
@@ -38,6 +46,10 @@ public class Coureur {
 	
 	public int getMt(){
 		return this.mt;
+	}
+	
+	public Equipe getEq(){
+		return this.eq;
 	}
 	
 }
