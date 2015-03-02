@@ -35,12 +35,12 @@ public class Saison {
 			int alea = 0;
 			int malus = 0;
 			
-			int forme = random(5,0);
-			if(forme > 4)
+			c.forme = random(5,0);
+			if(c.forme > 4)
 			{
 				System.out.println(c.getNomCoureur() + " est plutôt en forme!");
 			}
-			else if(forme < 2)
+			else if(c.forme < 2)
 			{
 				System.out.println(c.getNomCoureur() + " n'est pas trop en forme!");
 			}
@@ -69,7 +69,7 @@ public class Saison {
 				}
 			}
 						
-			int scoret = forme + malus; 
+			int scoret = c.forme + malus; 
 			int sc_Sp = course.getSp() - c.getSp();
 			int sc_Va = course.getVa() - c.getVa();
 			int sc_Mt = course.getMt() - c.getMt();
@@ -129,8 +129,8 @@ public class Saison {
 		e5.addCoureur(coureur5);
 
 		Course course1 = new Course(1, "LBL", 5, 10, 5);
-		Course course2 = new Course(2, "MSR", 8, 8, 5);
-		Course course3 = new Course(3, "FW", 4, 8, 7);
+		Course course2 = new Course(2, "MSR", 8, 8, 4);
+		Course course3 = new Course(3, "FW", 4, 9, 7);
 		Course course4 = new Course(4, "TF", 9, 4, 1);
 		Course course5 = new Course(5, "TFG", 1, 5, 10);
 		
