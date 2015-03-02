@@ -6,6 +6,7 @@
  * @author Remy
  *
  */
+
 public class Coureur {
 
 	/**
@@ -17,6 +18,18 @@ public class Coureur {
 	private int sp;
 	private int mt;
 	private Equipe eq;
+	
+	private static int DEFAULT_ID = 0;
+	
+	public Coureur()
+	{
+		this.idCoureur = DEFAULT_ID;
+		DEFAULT_ID++;
+		this.nomCoureur = "C"+idCoureur;
+		this.va = -1;
+		this.sp = -1;
+		this.mt = -1;
+	}
 	
 	public Coureur(int idCoureur, int va, int sp, int mt, Equipe eq)
 	{
@@ -50,6 +63,19 @@ public class Coureur {
 	
 	public Equipe getEq(){
 		return this.eq;
+	}
+	
+	public String toString()
+	{
+		String str = "";
+		
+		str += "Coureur " + this.nomCoureur + ": ";
+		str += "Equipe " + this.eq + " | ";
+		str += "Grimpeur " + this.mt + " | ";
+		str += "Sprinteur: " + this.sp + " | ";
+		str += "Puncheur " + this.va;
+		return str;
+		
 	}
 	
 }
