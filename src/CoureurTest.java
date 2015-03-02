@@ -61,4 +61,9 @@ public class CoureurTest extends TestCase {
 		assertEquals("Vérification de l'équipe",e1, coureur1.getEq());
 	}
 
+	@Test
+	public void testToString() {
+		assertEquals("Vérification de toString()","Coureur C1: Equipe Movistar (1000000) | Grimpeur 8 | Sprinteur: 7 | Puncheur 9", coureur1.toString());
+	}
+
 }
