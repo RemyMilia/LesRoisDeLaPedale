@@ -7,7 +7,8 @@
  *
  */
 
-public class Coureur {
+public class Coureur 
+{
 
 	/**
 	 * @param args
@@ -17,10 +18,17 @@ public class Coureur {
 	private int va;
 	private int sp;
 	private int mt;
-	private Equipe eq;
+
+	private Equipe eq = null;
+	
+	public int crev = 0;
+	public int chute = 0;
+	public boolean abandon = false;
 	
 	private static int DEFAULT_ID = 0;
 	
+	
+	// Constructeurs
 	public Coureur()
 	{
 		this.idCoureur = DEFAULT_ID;
@@ -31,51 +39,111 @@ public class Coureur {
 		this.mt = -1;
 	}
 	
-	public Coureur(int idCoureur, int va, int sp, int mt, Equipe eq)
+	public Coureur(String nomCoureur, int sp, int va, int mt)
 	{
-		this.idCoureur = idCoureur;
-		this.nomCoureur = "C"+idCoureur;
+		this.idCoureur = DEFAULT_ID;
+		this.nomCoureur = nomCoureur;
 		this.va = va;
 		this.sp = sp;
 		this.mt = mt;
-		this.eq = eq;
+		DEFAULT_ID++;
 	}
 	
-	public int getIdCoureur(){
+	
+	// Accesseurs
+	public int getIdCoureur()
+	{
 		return this.idCoureur;
 	}
 	
-	public String getNomCoureur(){
+	public String getNomCoureur()
+	{
 		return this.nomCoureur;
 	}
 	
-	public int getVa(){
+	public int getVa()
+	{
 		return this.va;
 	}
 	
-	public int getSp(){
+	public int getSp()
+	{
 		return this.sp;
 	}
 	
-	public int getMt(){
+	public int getMt()
+	{
 		return this.mt;
 	}
 	
-	public Equipe getEq(){
+	public Equipe getEq()
+	{
 		return this.eq;
 	}
 	
+	
+	
+	// Mutateurs 
+	public void setNomCoureur(String nomCoureur)
+	{
+		this.nomCoureur = nomCoureur;
+	}
+	
+	public void setIdCoureur(int id)
+	{
+		this.idCoureur = id;
+	}
+
+	
+	public void setVa(int va)
+	{
+		this.va = va;
+	}
+	
+	public void setMt(int mt)
+	{
+		this.mt = mt;
+	}
+	
+	public void setSp(int sp)
+	{
+		this.sp = sp;
+	}
+
+	public void setEquipe(Equipe e)
+	{
+		this.eq = e;
+	}
+	
+	public void getStatus()
+	{
+		String str="";
+		str += this.nomCoureur + " a subi " + this.crev + " crevaison(s), " + this.chute + " chute(s).";
+		if(abandon)
+		{
+			str += " Il a été contraint d'abandonner.";
+		}
+		System.out.println(str);
+	}
+	
+	public void reset()
+	{
+		this.chute = 0;
+		this.crev = 0;
+		this.abandon = false;
+	}
+	
+	// toString()
 	public String toString()
 	{
 		String str = "";
 		
-		str += "Coureur " + this.nomCoureur + ": ";
+		str += this.nomCoureur + "! ";
 		str += "Equipe " + this.eq + " | ";
 		str += "Grimpeur " + this.mt + " | ";
 		str += "Sprinteur: " + this.sp + " | ";
 		str += "Puncheur " + this.va;
-		return str;
-		
+		return str;	
 	}
 	
 }

@@ -6,18 +6,19 @@
  * @author Remy
  *
  */
-public class Course {
+public class Course 
+{
 	
 	private int idCourse;
 	private String nomCourse;
-	private int va;
-	private int sp;
-	private int mt;
+	private int va; // Profil orienté vallons
+	private int sp; // plaines - sprint
+	private int mt; // montagneux
 	private Coureur vainq;
 	
 	private static int DEFAULT_ID = 0;
 	
-	
+	// Constructeurs 
 	public Course()
 	{
 		this.idCourse = DEFAULT_ID;
@@ -28,7 +29,7 @@ public class Course {
 		this.mt = -1;
 	}
 	
-	public Course(int idCourse, String nomCourse, int va, int sp, int mt)
+	public Course(int idCourse, String nomCourse, int sp, int va, int mt)
 	{
 		this.idCourse = idCourse;
 		this.nomCourse = nomCourse;
@@ -37,24 +38,29 @@ public class Course {
 		this.mt = mt;
 	}
 	
+	// Accesseurs 
 	public int getIdCourse()
 	{
 		return this.idCourse;
 	}
 	
-	public String getNomCourse(){
+	public String getNomCourse()
+	{
 		return this.nomCourse;
 	}
 	
-	public int getVa(){
+	public int getVa()
+	{
 		return this.va;
 	}
 	
-	public int getSp(){
+	public int getSp()
+	{
 		return this.sp;
 	}
 	
-	public int getMt(){
+	public int getMt()
+	{
 		return this.mt;
 	}
 	
@@ -63,9 +69,43 @@ public class Course {
 		return this.vainq;
 	}
 	
+	
+	// Mutateurs 
 	public void setVainqueur(Coureur vainq)
 	{
 		this.vainq = vainq;
 	}
-
+	
+	public void setIdCourse(int id)
+	{
+		this.idCourse = id;
+	}
+	
+	public void setNomCourse(String nomC)
+	{
+		this.nomCourse = nomC;
+	}
+	
+	public void setVa(int va)
+	{
+		this.va = va;
+	}
+	
+	public void setMt(int mt)
+	{
+		this.mt = mt;
+	}
+	
+	public void setSp(int sp)
+	{
+		this.sp = sp;
+	}
+	
+	// toString()
+	public String toString()
+	{
+		String str = "";
+		str += "Id " + this.idCourse + " " + this.nomCourse + " (" + "plaine:" + this.sp + "," + "vallons: " + this.va + ", montagne: " + this.mt + ")";
+		return str;
+	}
 }
