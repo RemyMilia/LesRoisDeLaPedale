@@ -21,7 +21,7 @@ public class Coureur
 
 	private Equipe eq = null;
 	
-	public int forme; 
+	public int forme = 0; 
 	public int crev = 0;
 	public int chute = 0;
 	public boolean abandon = false;
